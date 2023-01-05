@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Continuous Delivery
+
+This project is set up for continuous delivery using GitHub Actions. Whenever code changes are pushed to the `main` branch, the following steps are executed:
+
+1. The code is checked out.
+2. Dependencies are installed.
+3. The Angular application is built.
+4. The `docs` folder is published to GitHub Pages.
+
+The current status of the CD workflow can be viewed in the [Actions](https://github.com/johanjaguardev/iris/actions) tab.
+
+## Changelog
+
+### v1.0.0 (2023-01-05)
+
+- Initial release
+- Added Angular installation instructions
+- Added CI/CD configuration using GitHub Actions
