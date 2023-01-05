@@ -2,6 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
+This code challenge is a Todo List application built with Angular, with unit tests and responsive design.
+
+## Code Challenge: Todo List
+
+In this code challenge, you will be building a Todo List application using Angular. The application should allow users to create and manage a list of tasks, and should have the following features:
+
+- Add new tasks
+- Mark tasks as complete
+- Delete tasks
+- Filter tasks by status (all, complete, incomplete)
+
+As an additional development, you should also implement the ability to edit task descriptions. This should allow users to change the description of an existing task.
+
+The application should be fully unit tested, and should be responsive so that it can be used on desktop and mobile devices.
+
+To complete this challenge, you should submit a GitHub repository containing the source code for the Todo List application, as well as any instructions necessary to build and run the application.
+
+![challenge](src/assets/instrucciones.png)
+![example](src/assets/ventana.png)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
