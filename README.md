@@ -77,5 +77,8 @@ GitHub Actions and Pages are configured to automatically build and deploy update
 - Added Angular installation instructions
 - Added CI/CD configuration using GitHub Actions and Github Pages
 
-}
-}
+### v1.1.0 (2023-01-06)
+
+- Mockups for components
+- Creation of first components unit tests for [header, filter, list, stacker, item]
+- Creation of first components [header, filter, list, stacker, item]
