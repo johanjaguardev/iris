@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672968004353,
+  "timestamp": 1672968508404,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -56,7 +56,7 @@
     "/assets/instrucciones.png": "2e74de7214daaa947bde30302dab4c6dca6ac18b",
     "/assets/ventana.png": "4199722fbd02382100ed2a47244d84ca7e23aed1",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "cb2366e0f6d35f616b87dcccf5e87bee29240b9f",
+    "/index.html": "103435fe251106cbd95bc0bf37c3c868a0e10419",
     "/main.52b9a4ff3b10f7ab.js": "77a0d0735d2d6e18ac9cbd44d6f4c112a56cc141",
     "/manifest.webmanifest": "a4b6d67738045f37643b658c6f23c33fabc5ab1d",
     "/polyfills.a32538b88a7e6741.js": "5f426daed51794d7b67219251afa8ae4ce766bf7",
