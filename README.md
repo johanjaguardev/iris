@@ -53,9 +53,21 @@ This project is set up for continuous delivery using GitHub Actions. Whenever co
 1. The code is checked out.
 2. Dependencies are installed.
 3. The Angular application is built.
-4. The `docs` folder is published to GitHub Pages.
+4. The `root` folder is published to GitHub Pages.
 
 The current status of the CD workflow can be viewed in the [Actions](https://github.com/johanjaguardev/iris/actions) tab.
+
+## Branching Strategy
+
+We use trunk-based development for this project, with the trunk branch being named `main`. To add a new feature, follow these steps:
+
+1. Create a new feature branch from `main`.
+2. Commit your changes to the feature branch and push them to the remote repository.
+3. Open a pull request from the feature branch to `main`.
+4. Use GitHub Actions to run automated tests on the code in the pull request.
+5. If the tests pass, merge the pull request into `main`.
+
+GitHub Actions and Pages are configured to automatically build and deploy updates to the `gh-pages` branch when changes are merged into `main`.
 
 ## Changelog
 
@@ -63,4 +75,7 @@ The current status of the CD workflow can be viewed in the [Actions](https://git
 
 - Initial release
 - Added Angular installation instructions
-- Added CI/CD configuration using GitHub Actions
+- Added CI/CD configuration using GitHub Actions and Github Pages
+
+}
+}
