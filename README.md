@@ -19,8 +19,15 @@ The application should be fully unit tested, and should be responsive so that it
 
 To complete this challenge, you should submit a GitHub repository containing the source code for the Todo List application, as well as any instructions necessary to build and run the application.
 
+The challenge is described here:
+
 ![challenge](src/assets/instrucciones.png)
+
+And the window example is:
 ![example](src/assets/ventana.png)
+
+I have decided to structure my components in the following way: [header, filter, stacker, and list]. The list component will contain an h2 element and an item component, which will be populated with an array of todoItem elements.
+![components](src/assets/componentes.png)
 
 ## Development server
 
