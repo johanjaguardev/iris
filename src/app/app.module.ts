@@ -7,7 +7,10 @@ import { FilterComponent } from './components/filter/filter.component';
 import { StackerComponent } from './components/stacker/stacker.component';
 import { ListComponent } from './components/list/list.component';
 import { ItemComponent } from './components/item/item.component';
-// import { ItemComponent } from './components/item/item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatOptionModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,6 @@ import { ItemComponent } from './components/item/item.component';
     StackerComponent,
     ListComponent,
     ItemComponent,
-    // ItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,10 @@ import { ItemComponent } from './components/item/item.component';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatOptionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

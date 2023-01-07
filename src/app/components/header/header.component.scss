@@ -10,6 +10,7 @@
 
   @media screen and (min-width: $screenS) {
     border-radius: 0 calc($spacer * 5) calc($spacer * 5) 0;
+    margin-top: rem(200px);
     width: 500px;
   }
 }

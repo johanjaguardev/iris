@@ -1,1 +1,8 @@
-<p>filter works!</p>
+<mat-form-field>
+  <mat-label>Select a State</mat-label>
+  <mat-select [(value)]="selectedState" (selectionChange)="onStateChange()">
+    <mat-option *ngFor="let state of states" [value]="state">{{
+      state
+    }}</mat-option>
+  </mat-select>
+</mat-form-field>

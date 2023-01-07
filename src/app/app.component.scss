@@ -1,2 +1,19 @@
 @import "./sass/variables";
 @import "./sass/layout";
+
+.iris {
+  &__app {
+    background-color: $white__wild-sand;
+    font-family: $font-primary;
+  }
+
+  &__body {
+    padding: rem(28px);
+  }
+}
+
+h1 {
+  color: $green__plantation;
+  font-size: rem(32px);
+  font-weight: 600;
+}
