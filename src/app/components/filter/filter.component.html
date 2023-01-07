@@ -1,8 +1,14 @@
-<mat-form-field>
-  <mat-label>Select a State</mat-label>
-  <mat-select [(value)]="selectedState" (selectionChange)="onStateChange()">
-    <mat-option *ngFor="let state of states" [value]="state">{{
-      state
-    }}</mat-option>
+<mat-form-field class="filter">
+  <mat-select
+    [(value)]="selectedState"
+    (selectionChange)="onStateChange()"
+    class="filter__select"
+  >
+    <mat-option
+      *ngFor="let state of states"
+      [value]="state"
+      class="filter__option"
+      >{{ state }}</mat-option
+    >
   </mat-select>
 </mat-form-field>

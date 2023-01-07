@@ -109,13 +109,13 @@ We welcome feedback and suggestions for new features! If you have an idea for a 
 
 ## Changelog
 
-### v1.0.0 (2023-01-05)
+### v0.1.0 (2023-01-05)
 
 - Initial release
 - Added Angular installation instructions
 - Added CI/CD configuration using GitHub Actions and Github Pages
 
-### v1.1.0 (2023-01-06)
+### v0.2.0 (2023-01-06)
 
 - Mockups for components
 - Creation of first components unit tests for [header, filter, list, stacker, item]

@@ -1,0 +1,30 @@
+@import "./../../sass/variables";
+:host {
+  ::ng-deep {
+    .filter {
+      margin: 1rem 0 0;
+      width: 100%;
+
+      .mat-mdc-text-field-wrapper {
+        box-sizing: border-box;
+        padding: 2px;
+      }
+      .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(
+          .mdc-text-field--textarea
+        )
+        .mat-mdc-form-field-infix {
+        padding: 0;
+      }
+      .mdc-line-ripple,
+      .mat-mdc-form-field-subscript-wrapper {
+        display: none;
+      }
+      &__select {
+        box-sizing: border-box;
+        border: 2px solid $border-forms;
+        border-radius: rem(16px);
+        padding: rem(16px);
+      }
+    }
+  }
+}
