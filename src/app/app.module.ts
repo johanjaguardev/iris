@@ -2,11 +2,12 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { HeaderComponent } from './header/header.component';
-import { FilterComponent } from './filter/filter.component';
-import { StackerComponent } from './stacker/stacker.component';
-import { ListComponent } from './list/list.component';
-import { ItemComponent } from './item/item.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { StackerComponent } from './components/stacker/stacker.component';
+import { ListComponent } from './components/list/list.component';
+import { ItemComponent } from './components/item/item.component';
+// import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ItemComponent } from './item/item.component';
     StackerComponent,
     ListComponent,
     ItemComponent,
+    // ItemComponent,
   ],
   imports: [
     BrowserModule,

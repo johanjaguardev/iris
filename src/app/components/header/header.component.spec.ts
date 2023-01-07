@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -8,16 +7,21 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [HeaderComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should exist img logo', () => {
+    expect(
+      fixture.nativeElement.querySelector('[data-test="logo"]')
+    ).toBeTruthy();
+  });
+
+  it('should exist img with logo class', () => {
+    expect(fixture.nativeElement.querySelector('.logo')).toBeTruthy();
   });
 });

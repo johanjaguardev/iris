@@ -1,0 +1,23 @@
+@import "./../../sass/variables";
+@import "./../../sass/layout";
+
+.header {
+  align-items: center;
+  background-color: $bg-header;
+  display: flex;
+  height: calc($spacer * 4);
+  justify-content: center;
+
+  @media screen and (min-width: $screenS) {
+    border-radius: 0 calc($spacer * 5) calc($spacer * 5) 0;
+    width: 500px;
+  }
+}
+
+.logo {
+  width: 85px;
+
+  @media screen and (min-width: $screenS) {
+    width: 150px;
+  }
+}
