@@ -1,0 +1,38 @@
+@import "./../../sass/variables";
+:host {
+  ::ng-deep {
+    .stacker {
+      background: transparent;
+      box-sizing: border-box;
+      border: 2px solid $border-forms;
+      border-radius: rem(16px);
+      margin: 1rem 0 0;
+      padding: 0;
+      width: 100%;
+
+      .mdc-line-ripple {
+        display: none;
+      }
+      .mat-mdc-form-field-subscript-wrapper {
+        display: none;
+      }
+      .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: transparent;
+      }
+      button.ng-tns-c34-2.ng-star-inserted {
+        border: none;
+        background-color: transparent;
+      }
+      &__icon {
+        background-color: transparent;
+        color: $green__plantation;
+        cursor: pointer;
+        font-weight: 700;
+        transition: 0.3 ease-in-out color;
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+  }
+}

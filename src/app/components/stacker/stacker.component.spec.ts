@@ -50,4 +50,14 @@ describe('StackerComponent', () => {
   it('should exist element with stacker class', () => {
     expect(fixture.nativeElement.querySelector('.stacker')).toBeTruthy();
   });
+
+  it('should exist stacker__icon form control', () => {
+    expect(
+      fixture.nativeElement.querySelector('[data-test="stacker__icon"]')
+    ).toBeTruthy();
+  });
+
+  it('should exist element with stacker__icon class', () => {
+    expect(fixture.nativeElement.querySelector('.stacker__icon')).toBeTruthy();
+  });
 });

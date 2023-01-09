@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./stacker.component.scss'],
 })
 export class StackerComponent {
-  value = 'Clear me';
+  value = 'Text the new item';
 
   onClickAdd = () => {
     console.log('add');

@@ -1,5 +1,4 @@
 <mat-form-field class="stacker" data-test="stacker">
-  <mat-label>Clearable input</mat-label>
   <input matInput type="text" [(ngModel)]="value" />
   <button
     *ngIf="value"
@@ -8,6 +7,6 @@
     aria-label="Clear"
     (click)="onClickAdd()"
   >
-    <mat-icon>close</mat-icon>
+    <mat-icon class="stacker__icon" data-test="stacker__icon">add</mat-icon>
   </button>
 </mat-form-field>
