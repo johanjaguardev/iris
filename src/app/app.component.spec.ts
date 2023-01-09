@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { AppComponent } from './app.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,6 +29,7 @@ describe('AppComponent', () => {
         StackerComponent,
         ItemComponent,
       ],
+      imports: [MatFormFieldModule, MatSelectModule],
     }).compileComponents();
     component = new AppComponent();
     fixture = TestBed.createComponent(AppComponent);
@@ -47,15 +50,14 @@ describe('AppComponent', () => {
   });
   it('Should create filter Element', () => {
     expect(appFilter).toBeTruthy();
-    // });
-    // it('Should create stacker Element', () => {
-    //   expect(appStacker).toBeTruthy();
-    // });
-    // it('Should create list Element', () => {
-    //   expect(appList).toBeTruthy();
-    // });
-    // it('Should create h2 list Element', () => {
-    //   expect(listH2).toBeTruthy();
-    //
+  });
+  it('Should create stacker Element', () => {
+    expect(appStacker).toBeTruthy();
+  });
+  it('Should create list Element', () => {
+    expect(appList).toBeTruthy();
+  });
+  it('Should create h2 list Element', () => {
+    expect(listH2).toBeTruthy();
   });
 });
