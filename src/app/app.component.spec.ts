@@ -39,7 +39,7 @@ describe('AppComponent', () => {
     appStacker = fixture.nativeElement.querySelector('[data-test="stacker"]');
     appList = fixture.nativeElement.querySelector('[data-test="list"]');
     // appItem = fixture.nativeElement.querySelector('[data-test="item"]');
-    listH2 = fixture.nativeElement.querySelector('[data-test="listH2"]');
+    listH2 = fixture.nativeElement.querySelector('[data-test="list__h2"]');
   });
 
   it('Should create H1 Element', () => {

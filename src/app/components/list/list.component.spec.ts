@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+import { ItemComponent } from './../item/item.component';
 import { ListComponent } from './list.component';
 
 describe('ListComponent', () => {
@@ -8,9 +10,9 @@ describe('ListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListComponent ]
-    })
-    .compileComponents();
+      declarations: [ListComponent, ItemComponent],
+      imports: [MatCheckboxModule, MatIconModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
@@ -19,5 +21,14 @@ describe('ListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should exist list form control', () => {
+    expect(
+      fixture.nativeElement.querySelector('[data-test="list"]')
+    ).toBeTruthy();
+  });
+
+  it('should exist element with list class', () => {
+    expect(fixture.nativeElement.querySelector('.list')).toBeTruthy();
   });
 });

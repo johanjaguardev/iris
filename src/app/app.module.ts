@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -39,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     MatOptionModule,
     MatInputModule,
     MatIconModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

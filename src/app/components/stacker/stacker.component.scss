@@ -27,7 +27,9 @@
         background-color: transparent;
         color: $green__plantation;
         cursor: pointer;
+        font-size: rem(28px);
         font-weight: 700;
+        line-height: 1;
         transition: 0.3 ease-in-out color;
         &:hover {
           color: $black;
