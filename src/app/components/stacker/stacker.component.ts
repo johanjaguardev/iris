@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class StackerComponent {
   value = 'Clear me';
+
+  onClickAdd = () => {
+    console.log('add');
+  };
 }

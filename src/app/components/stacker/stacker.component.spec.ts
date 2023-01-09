@@ -1,16 +1,29 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { StackerComponent } from './stacker.component';
-
-describe('StackerComponent', () => {
+import { By } from '@angular/platform-browser';
+const onClickAdd = () => {
+  console.log('add');
+};
+fdescribe('StackerComponent', () => {
   let component: StackerComponent;
   let fixture: ComponentFixture<StackerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StackerComponent ]
-    })
-    .compileComponents();
+      declarations: [StackerComponent],
+      imports: [
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        FormsModule,
+        BrowserAnimationsModule,
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(StackerComponent);
     component = fixture.componentInstance;
@@ -19,5 +32,12 @@ describe('StackerComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should call myFunction when button is clicked', () => {
+    spyOn(component, 'onClickAdd');
+    const button = fixture.debugElement.query(By.css('button'));
+    button.triggerEventHandler('click', null);
+    expect(component.onClickAdd).toHaveBeenCalled();
   });
 });
