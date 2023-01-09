@@ -1,0 +1,21 @@
+@import "./../../sass/variables";
+:host {
+  ::ng-deep {
+    .item {
+      label {
+        color: $green__plantation;
+        font-size: rem(12px);
+        font-weight: 700;
+      }
+
+      &__icon {
+        color: red;
+        cursor: pointer;
+        position: absolute;
+        right: rem(-30px);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

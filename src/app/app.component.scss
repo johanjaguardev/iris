@@ -1,10 +1,11 @@
 @import "./sass/variables";
 @import "./sass/layout";
-
+*:not(mat-icon) {
+  font-family: $font-primary;
+}
 .iris {
   &__app {
     background-color: $white__wild-sand;
-    font-family: $font-primary;
   }
 
   &__body {

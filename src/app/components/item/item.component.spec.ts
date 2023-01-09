@@ -21,4 +21,24 @@ describe('ItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should exist item form control', () => {
+    expect(
+      fixture.nativeElement.querySelector('[data-test="item"]')
+    ).toBeTruthy();
+  });
+
+  it('should exist element with item class', () => {
+    expect(fixture.nativeElement.querySelector('.item')).toBeTruthy();
+  });
+
+  it('should exist item__icon form control', () => {
+    expect(
+      fixture.nativeElement.querySelector('[data-test="item__icon"]')
+    ).toBeTruthy();
+  });
+
+  it('should exist element with item__icon class', () => {
+    expect(fixture.nativeElement.querySelector('.item__icon')).toBeTruthy();
+  });
 });

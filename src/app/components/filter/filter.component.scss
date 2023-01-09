@@ -4,10 +4,12 @@
     .filter {
       margin: 1rem 0 0;
       width: 100%;
-
       .mat-mdc-text-field-wrapper {
+        padding: 0;
+      }
+      .mat-mdc-form-field-subscript-wrapper {
         box-sizing: border-box;
-        padding: 2px;
+        display: none;
       }
       .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(
           .mdc-text-field--textarea
@@ -21,7 +23,7 @@
       &__select {
         box-sizing: border-box;
         border: 2px solid $border-forms;
-        border-radius: rem(16px);
+        border-radius: $box-border-radius;
         padding: rem(16px);
       }
     }
