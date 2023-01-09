@@ -9,7 +9,7 @@ import { By } from '@angular/platform-browser';
 const onClickAdd = () => {
   console.log('add');
 };
-fdescribe('StackerComponent', () => {
+describe('StackerComponent', () => {
   let component: StackerComponent;
   let fixture: ComponentFixture<StackerComponent>;
 
@@ -34,10 +34,20 @@ fdescribe('StackerComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call myFunction when button is clicked', () => {
+  it('should call onClickAdd when button is clicked', () => {
     spyOn(component, 'onClickAdd');
     const button = fixture.debugElement.query(By.css('button'));
     button.triggerEventHandler('click', null);
     expect(component.onClickAdd).toHaveBeenCalled();
+  });
+
+  it('should exist stacker form control', () => {
+    expect(
+      fixture.nativeElement.querySelector('[data-test="stacker"]')
+    ).toBeTruthy();
+  });
+
+  it('should exist element with stacker class', () => {
+    expect(fixture.nativeElement.querySelector('.stacker')).toBeTruthy();
   });
 });

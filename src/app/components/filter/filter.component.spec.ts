@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { FilterComponent } from './filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { By } from '@angular/platform-browser';
 
 describe('FilterComponent', () => {
   let component: FilterComponent;
@@ -36,5 +37,14 @@ describe('FilterComponent', () => {
 
   it('should exist element with filter class', () => {
     expect(fixture.nativeElement.querySelector('.filter')).toBeTruthy();
+  });
+
+  it('should call onStateChange when dropdown change', () => {
+    spyOn(component, 'onStateChange');
+    const select = fixture.debugElement.query(By.css('mat-select'));
+    const selectNativeElement = select.nativeElement;
+    selectNativeElement.dispatchEvent(new Event('selectionChange'));
+    fixture.detectChanges();
+    expect(component.onStateChange).toHaveBeenCalled();
   });
 });
