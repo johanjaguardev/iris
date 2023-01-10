@@ -88,15 +88,18 @@ My Project is currently in the CSS and HTML refinement stage. Here is a list of 
 
 - First instalations and CD/CI integration
 - Component division
+- First TDD implementation
+- First Stable CSS version only for mobile
 
 ## Future Steps
 
 There are several features and improvements that we plan to add to My Project in the future. Here is a list of some of the things that we are working on:
 
-- stacker component
+- stacker component action
 - delete item action
 - checked action item
 - filter
+- css for desktop
 
 ## Potential Features
 
@@ -120,3 +123,9 @@ We welcome feedback and suggestions for new features! If you have an idea for a 
 - Mockups for components
 - Creation of first components unit tests for [header, filter, list, stacker, item]
 - Creation of first components [header, filter, list, stacker, item]
+
+### v0.3.0 (2023-01-09)
+
+- CSS for all components
+- First version for event functions
+- Fixing unit test after import material components
