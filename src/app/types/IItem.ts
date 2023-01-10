@@ -1,5 +1,5 @@
-type Item = {
+type IItem = {
   status: boolean;
   description: string;
 };
-export { Item };
+export { IItem };
