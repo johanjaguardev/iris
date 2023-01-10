@@ -135,3 +135,9 @@ We welcome feedback and suggestions for new features! If you have an idea for a 
 
 - Creation of dataservice with addItem, removeItem, getItem and updateItem for use in all the application
 - action stack elements to items array
+
+### v0.5.0 (2023-01-10)
+
+- Change the data-service implementing rxjs to get async data in list items
+- fix remove item method in items
+- changing unit test
