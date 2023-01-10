@@ -1,4 +1,4 @@
-import { async, TestBed } from '@angular/core/testing';
+import { waitForAsync, TestBed } from '@angular/core/testing';
 import { IItem } from '../types/IItem';
 
 import { DataService } from './data-service';
@@ -8,7 +8,7 @@ describe('DataService', () => {
   let item1: IItem;
   let item2: IItem;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       providers: [DataService],
     }).compileComponents();
