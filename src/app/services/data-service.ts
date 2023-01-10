@@ -12,10 +12,10 @@ export class DataService {
   addItem(item: IItem): void {
     this.items.push(item);
   }
-  removeItem(id: number): void {
+  removeItem(id: string): void {
     this.items = this.items.filter((item) => item.id !== id);
   }
-  getItem(id: number): IItem {
+  getItem(id: string): IItem {
     return this.items.filter((item) => item.id === id)[0];
   }
   updateItem(modifyedItem: IItem): void {

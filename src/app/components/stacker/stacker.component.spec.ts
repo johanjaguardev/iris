@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { StackerComponent } from './stacker.component';
 import { By } from '@angular/platform-browser';
+import { DataService } from 'src/app/services/data-service';
 const onClickAdd = () => {
   console.log('add');
 };
 describe('StackerComponent', () => {
   let component: StackerComponent;
   let fixture: ComponentFixture<StackerComponent>;
+  let service: DataService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -23,8 +25,9 @@ describe('StackerComponent', () => {
         FormsModule,
         BrowserAnimationsModule,
       ],
+      providers: [DataService],
     }).compileComponents();
-
+    service = TestBed.get(DataService);
     fixture = TestBed.createComponent(StackerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -59,5 +62,15 @@ describe('StackerComponent', () => {
 
   it('should exist element with stacker__icon class', () => {
     expect(fixture.nativeElement.querySelector('.stacker__icon')).toBeTruthy();
+  });
+
+  it('service should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('should call the add function of the DataService', () => {
+    spyOn(service, 'addItem');
+    component.addItem('Mocked description');
+    expect(service.addItem).toHaveBeenCalled();
   });
 });

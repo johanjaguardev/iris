@@ -1,6 +1,6 @@
 type IItem = {
   checked: boolean;
   description: string;
-  id: number;
+  id: string;
 };
 export { IItem };

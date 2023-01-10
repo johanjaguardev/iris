@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { ItemComponent } from './item.component';
+import { FormsModule } from '@angular/forms';
 
 describe('ItemComponent', () => {
   let component: ItemComponent;
@@ -10,7 +11,7 @@ describe('ItemComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ItemComponent],
-      imports: [MatCheckboxModule, MatIconModule],
+      imports: [MatCheckboxModule, MatIconModule, FormsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ItemComponent);
