@@ -6,7 +6,7 @@ import { IItem } from '../types/IItem';
   providedIn: 'root',
 })
 export class DataService {
-  private itemsSubject = new BehaviorSubject<IItem[]>([]);
+  itemsSubject = new BehaviorSubject<IItem[]>([]);
 
   constructor() {}
   get items$(): Observable<IItem[]> {
@@ -14,7 +14,6 @@ export class DataService {
   }
 
   addItem(item: IItem): void {
-    debugger;
     this.itemsSubject.next([...this.itemsSubject.value, item]);
   }
   removeItem(id: string) {
