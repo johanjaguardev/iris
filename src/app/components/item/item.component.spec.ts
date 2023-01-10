@@ -79,14 +79,22 @@ describe('ItemComponent', () => {
     expect(iconElement.getAttribute('ng-reflect-font-icon')).toBe('close');
   });
 
-  xit('should check the mat-checkbox when item.checked is true', () => {
-    component.item = {
-      checked: true,
-      description: '',
-      id: '0',
-    };
-    fixture.detectChanges();
+  it('should remove an item from the list', () => {
+    // Add some initial items to the list
+    service.addItem({ id: '1', description: 'Item 1', checked: false });
+    service.addItem({ id: '2', description: 'Item 2', checked: false });
+    service.addItem({ id: '3', description: 'Item 3', checked: false });
 
-    expect(checkboxElement.classList).toContain('mat-checkbox-checked');
+    // Verify that the list has the expected number of items
+    expect(service.itemsSubject.value.length).toBe(3);
+
+    // Call the onRemoveItem method with the ID of an item
+    component.onRemoveItem('2');
+
+    // Verify that the item was removed and the list has the expected number of items
+    expect(service.itemsSubject.value.length).toBe(2);
+    expect(
+      service.itemsSubject.value.find((item) => item.id === '2')
+    ).toBeUndefined();
   });
 });
