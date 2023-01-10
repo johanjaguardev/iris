@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, of, switchMap } from 'rxjs';
+import { BehaviorSubject, map, Observable, of, switchMap, take } from 'rxjs';
 import { IItem } from '../types/IItem';
 import { IFilter } from '../types/IFilter';
 
@@ -41,6 +41,9 @@ export class DataService {
 
   updateFilter(filter: IFilter): void {
     this.filter.next(filter);
+  }
+  getFilteredValue$(): Observable<string> {
+    return this.filter.pipe(take(1));
   }
 
   getFilteredItems$(): Observable<IItem[]> {
