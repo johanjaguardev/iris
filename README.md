@@ -84,7 +84,7 @@ GitHub Actions and Pages are configured to automatically build and deploy update
 
 ## Current Status
 
-My Project is currently in Filter Item Action implementation stage (v0.6.0) . Here is a list of the features that are currently implemented:
+My Project is currently in local storage stage (v0.7.0) . Here is a list of the features that are currently implemented:
 
 - First instalations and CD/CI integration
 - Component division
@@ -92,12 +92,12 @@ My Project is currently in Filter Item Action implementation stage (v0.6.0) . He
 - First Stable CSS version only for mobile
 - Stacker component action
 - Delete action in item component
+- Filter the item list
+- Checked action
 
 ## Future Steps
 
 There are several features and improvements that we plan to add to My Project in the future. Here is a list of some of the things that we are working on:
-
-- checked action item
 
 - css for desktop
 
@@ -105,7 +105,6 @@ There are several features and improvements that we plan to add to My Project in
 
 In addition to the features that we are currently working on, we also have a list of ideas for features that we may implement in the future. These features are not yet planned, but we are considering them for a future release:
 
-- implement localstorage to save the list modified
 - edit item descripction
 - add notes
 
@@ -141,3 +140,9 @@ We welcome feedback and suggestions for new features! If you have an idea for a 
 - Change the data-service implementing rxjs to get async data in list items
 - fix remove item method in items
 - changing unit test
+
+### v0.6.0 (2023-01-10)
+
+- Change the data-service to implement observables
+- Implement filter action
+- Change checkbox listener and update it in the service
