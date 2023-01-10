@@ -1,33 +1,44 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { IItem } from '../types/IItem';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  items: IItem[] = [];
+  itemsSubject = new BehaviorSubject<IItem[]>([]);
 
   constructor() {}
+  get items$(): Observable<IItem[]> {
+    return this.itemsSubject.asObservable();
+  }
 
   addItem(item: IItem): void {
-    this.items.push(item);
+    this.itemsSubject.next([...this.itemsSubject.value, item]);
   }
-  removeItem(id: string): void {
-    this.items = this.items.filter((item) => item.id !== id);
+  removeItem(id: string) {
+    this.itemsSubject.next(this.itemsSubject.value.filter((x) => x.id !== id));
   }
   getItem(id: string): IItem {
-    return this.items.filter((item) => item.id === id)[0];
+    const item = this.itemsSubject.value.find((item) => item.id === id);
+    return item || { id: '', description: '', checked: false };
   }
   updateItem(modifyedItem: IItem): void {
-    this.items = this.items.map((item) => {
-      if (item.id === modifyedItem.id) {
-        return {
-          ...item,
-          description: modifyedItem.description,
-          checked: modifyedItem.checked,
-        };
-      }
-      return item;
-    });
+    this.itemsSubject.next(
+      this.itemsSubject.value.map((item) => {
+        if (item.id === modifyedItem.id) {
+          return {
+            ...item,
+            description: modifyedItem.description,
+            checked: modifyedItem.checked,
+          };
+        }
+        return item;
+      })
+    );
+  }
+
+  getAllItems$(): Observable<IItem[]> {
+    return of(this.itemsSubject.value);
   }
 }

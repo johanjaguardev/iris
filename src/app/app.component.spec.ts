@@ -57,7 +57,4 @@ describe('AppComponent', () => {
   it('Should create list Element', () => {
     expect(appList).toBeTruthy();
   });
-  it('Should create h2 list Element', () => {
-    expect(listH2).toBeTruthy();
-  });
 });

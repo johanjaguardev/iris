@@ -84,21 +84,21 @@ GitHub Actions and Pages are configured to automatically build and deploy update
 
 ## Current Status
 
-My Project is currently in Delete Item Action implementation stage (v0.5.0) . Here is a list of the features that are currently implemented:
+My Project is currently in Filter Item Action implementation stage (v0.6.0) . Here is a list of the features that are currently implemented:
 
 - First instalations and CD/CI integration
 - Component division
 - First TDD implementation
 - First Stable CSS version only for mobile
-- stacker component action
+- Stacker component action
+- Delete action in item component
 
 ## Future Steps
 
 There are several features and improvements that we plan to add to My Project in the future. Here is a list of some of the things that we are working on:
 
-- delete item action
 - checked action item
-- filter
+
 - css for desktop
 
 ## Potential Features
@@ -135,3 +135,9 @@ We welcome feedback and suggestions for new features! If you have an idea for a 
 
 - Creation of dataservice with addItem, removeItem, getItem and updateItem for use in all the application
 - action stack elements to items array
+
+### v0.5.0 (2023-01-10)
+
+- Change the data-service implementing rxjs to get async data in list items
+- fix remove item method in items
+- changing unit test
