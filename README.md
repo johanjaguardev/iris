@@ -131,7 +131,7 @@ We welcome feedback and suggestions for new features! If you have an idea for a 
 - First version for event functions
 - Fixing unit test after import material components
 
-### v0.4.0 (2023-01-09)
+### v0.4.0 (2023-01-10)
 
 - Creation of dataservice with addItem, removeItem, getItem and updateItem for use in all the application
 - action stack elements to items array
