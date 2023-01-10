@@ -84,18 +84,18 @@ GitHub Actions and Pages are configured to automatically build and deploy update
 
 ## Current Status
 
-My Project is currently in the CSS and HTML refinement stage. Here is a list of the features that are currently implemented:
+My Project is currently in Delete Item Action implementation stage (v0.5.0) . Here is a list of the features that are currently implemented:
 
 - First instalations and CD/CI integration
 - Component division
 - First TDD implementation
 - First Stable CSS version only for mobile
+- stacker component action
 
 ## Future Steps
 
 There are several features and improvements that we plan to add to My Project in the future. Here is a list of some of the things that we are working on:
 
-- stacker component action
 - delete item action
 - checked action item
 - filter
@@ -105,6 +105,7 @@ There are several features and improvements that we plan to add to My Project in
 
 In addition to the features that we are currently working on, we also have a list of ideas for features that we may implement in the future. These features are not yet planned, but we are considering them for a future release:
 
+- implement localstorage to save the list modified
 - edit item descripction
 - add notes
 
@@ -129,3 +130,8 @@ We welcome feedback and suggestions for new features! If you have an idea for a 
 - CSS for all components
 - First version for event functions
 - Fixing unit test after import material components
+
+### v0.4.0 (2023-01-09)
+
+- Creation of dataservice with addItem, removeItem, getItem and updateItem for use in all the application
+- action stack elements to items array
