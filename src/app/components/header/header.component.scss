@@ -9,9 +9,16 @@
   justify-content: center;
 
   @media screen and (min-width: $screenS) {
+    align-items: flex-end;
+    background-color: $bg-headerM;
     border-radius: 0 calc($spacer * 5) calc($spacer * 5) 0;
-    margin-top: rem(200px);
-    width: 500px;
+    box-sizing: content-box;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: rem(64px);
+    padding: rem(32px) rem(32px);
+    transform: translateX(-50%);
+    width: 100%;
   }
 }
 

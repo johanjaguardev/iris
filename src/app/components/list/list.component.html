@@ -1,5 +1,5 @@
 <div class="list" data-test="list">
-  <h2 data-test="list__h2">All</h2>
+  <h2 data-test="list__h2" *ngIf="items$.length > 0">{{ filterStatus }}</h2>
   <ul>
     <li *ngFor="let item of items$">
       <app-item [item]="item"></app-item>

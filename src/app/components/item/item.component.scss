@@ -16,6 +16,20 @@
         top: 50%;
         transform: translateY(-50%);
       }
+      .mat-mdc-checkbox.mat-accent
+        .mdc-checkbox--selected
+        ~ .mdc-checkbox__ripple {
+        background: $bg-checkbox;
+      }
+      .mat-mdc-checkbox-checked {
+        .mdc-checkbox__background {
+          background-color: $bg-checkbox !important;
+          border-color: $bg-checkbox !important;
+          svg path {
+            fill: $bg-checkbox;
+          }
+        }
+      }
     }
   }
 }
