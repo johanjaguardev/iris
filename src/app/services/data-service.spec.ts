@@ -34,4 +34,19 @@ describe('DataServiceService', () => {
     const item = service.getItem(0);
     expect(item).toEqual({ description: 'test item', checked: false, id: 0 });
   });
+  it('should update the item from the items array', () => {
+    service.items = mockData;
+    const item = service.updateItem({
+      description: 'test item updated',
+      checked: true,
+      id: 0,
+    });
+    expect(service.items).toEqual([
+      {
+        description: 'test item updated',
+        checked: true,
+        id: 0,
+      },
+    ]);
+  });
 });
