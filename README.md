@@ -84,21 +84,21 @@ GitHub Actions and Pages are configured to automatically build and deploy update
 
 ## Current Status
 
-My Project is currently in Delete Item Action implementation stage (v0.5.0) . Here is a list of the features that are currently implemented:
+My Project is currently in Filter Item Action implementation stage (v0.6.0) . Here is a list of the features that are currently implemented:
 
 - First instalations and CD/CI integration
 - Component division
 - First TDD implementation
 - First Stable CSS version only for mobile
-- stacker component action
+- Stacker component action
+- Delete action in item component
 
 ## Future Steps
 
 There are several features and improvements that we plan to add to My Project in the future. Here is a list of some of the things that we are working on:
 
-- delete item action
 - checked action item
-- filter
+
 - css for desktop
 
 ## Potential Features
