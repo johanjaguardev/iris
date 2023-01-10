@@ -1,0 +1,35 @@
+@use "sass:math";
+
+@function stripUnit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+@function rem($pxValue) {
+  @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+}
+
+$black: #000;
+$blue__mountain-medow: #19b2a3;
+$blue__downy: #5cd2c5;
+$gray__silver: #cccccc;
+$green__plantation: #295454;
+$white__wild-sand: #f5f5f5;
+
+$bg-header: $blue__downy;
+$bg-general: $white__wild-sand;
+$border-forms: $gray__silver;
+// Bulma Breakpoints
+$screenXL: 1408px;
+$screenL: 1216px;
+$screenM: 1024px;
+
+// tablet and landscape mobile
+$screenS: 769px;
+
+//mobile
+$screenXS: 414px;
+
+$box-border-radius: 8px;
+$html-font-size: 16px;
+$spacer: rem($html-font-size);
+
+$font-primary: "Montserrat", sans-serif;

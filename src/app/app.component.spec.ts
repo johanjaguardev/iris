@@ -1,10 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { AppComponent } from './app.component';
-import { FilterComponent } from './filter/filter.component';
-import { HeaderComponent } from './header/header.component';
-import { ItemComponent } from './item/item.component';
-import { ListComponent } from './list/list.component';
-import { StackerComponent } from './stacker/stacker.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ItemComponent } from './components/item/item.component';
+import { ListComponent } from './components/list/list.component';
+import { StackerComponent } from './components/stacker/stacker.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -27,6 +29,7 @@ describe('AppComponent', () => {
         StackerComponent,
         ItemComponent,
       ],
+      imports: [MatFormFieldModule, MatSelectModule],
     }).compileComponents();
     component = new AppComponent();
     fixture = TestBed.createComponent(AppComponent);
@@ -35,8 +38,8 @@ describe('AppComponent', () => {
     appFilter = fixture.nativeElement.querySelector('[data-test="filter"]');
     appStacker = fixture.nativeElement.querySelector('[data-test="stacker"]');
     appList = fixture.nativeElement.querySelector('[data-test="list"]');
-    appItem = fixture.nativeElement.querySelector('[data-test="item"]');
-    listH2 = fixture.nativeElement.querySelector('[data-test="listH2"]');
+    // appItem = fixture.nativeElement.querySelector('[data-test="item"]');
+    listH2 = fixture.nativeElement.querySelector('[data-test="list__h2"]');
   });
 
   it('Should create H1 Element', () => {

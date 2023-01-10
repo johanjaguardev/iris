@@ -29,6 +29,12 @@ And the window example is:
 I have decided to structure my components in the following way: [header, filter, stacker, and list]. The list component will contain an h2 element and an item component, which will be populated with an array of todoItem elements.
 ![components](src/assets/componentes.png)
 
+## Test the site
+
+You can test the site at the following URL:
+
+[https://johanjaguardev.github.io/iris/](https://johanjaguardev.github.io/iris/)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -76,15 +82,40 @@ We use trunk-based development for this project, with the trunk branch being nam
 
 GitHub Actions and Pages are configured to automatically build and deploy updates to the `gh-pages` branch when changes are merged into `main`.
 
+## Current Status
+
+My Project is currently in the CSS and HTML refinement stage. Here is a list of the features that are currently implemented:
+
+- First instalations and CD/CI integration
+- Component division
+
+## Future Steps
+
+There are several features and improvements that we plan to add to My Project in the future. Here is a list of some of the things that we are working on:
+
+- stacker component
+- delete item action
+- checked action item
+- filter
+
+## Potential Features
+
+In addition to the features that we are currently working on, we also have a list of ideas for features that we may implement in the future. These features are not yet planned, but we are considering them for a future release:
+
+- edit item descripction
+- add notes
+
+We welcome feedback and suggestions for new features! If you have an idea for a feature that you would like to see in My Project, please let us know by opening an issue or sending us an email.
+
 ## Changelog
 
-### v1.0.0 (2023-01-05)
+### v0.1.0 (2023-01-05)
 
 - Initial release
 - Added Angular installation instructions
 - Added CI/CD configuration using GitHub Actions and Github Pages
 
-### v1.1.0 (2023-01-06)
+### v0.2.0 (2023-01-06)
 
 - Mockups for components
 - Creation of first components unit tests for [header, filter, list, stacker, item]

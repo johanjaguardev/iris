@@ -1,0 +1,25 @@
+@import "./../../sass/variables";
+:host {
+  ::ng-deep {
+    .list {
+      margin-top: rem(20px);
+      h2 {
+        color: $green__plantation;
+        font-size: rem(24px);
+        font-weight: 700;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        background-color: white;
+        border-radius: rem(8px);
+        margin: rem(10px) rem(30px) rem(10px) 0;
+        padding: rem(5px);
+        position: relative;
+      }
+    }
+  }
+}
