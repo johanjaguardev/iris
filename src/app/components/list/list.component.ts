@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IItem } from '../../types/IItem';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/services/data-service';
 import { Data } from '@angular/router';
 
 @Component({
