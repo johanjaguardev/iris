@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, map, Observable, of, switchMap } from 'rxjs';
 import { IItem } from '../types/IItem';
+import { IFilter } from '../types/IFilter';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   itemsSubject = new BehaviorSubject<IItem[]>([]);
+  filter = new BehaviorSubject<string>('All');
 
-  constructor() {}
   get items$(): Observable<IItem[]> {
     return this.itemsSubject.asObservable();
   }
@@ -38,7 +39,30 @@ export class DataService {
     );
   }
 
-  getAllItems$(): Observable<IItem[]> {
-    return of(this.itemsSubject.value);
+  updateFilter(filter: IFilter): void {
+    this.filter.next(filter);
+  }
+
+  getFilteredItems$(): Observable<IItem[]> {
+    return this.filter.asObservable().pipe(
+      switchMap((filterValue: string) => {
+        switch (filterValue) {
+          case 'All':
+            return this.items$;
+          case 'Checked':
+            return this.items$.pipe(
+              map((items: any) =>
+                items.filter((item: { checked: any }) => item.checked)
+              )
+            );
+          case 'Unchecked':
+            return this.items$.pipe(
+              map((items) => items.filter((item) => !item.checked))
+            );
+          default:
+            return of([]);
+        }
+      })
+    );
   }
 }

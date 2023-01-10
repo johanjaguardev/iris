@@ -1,12 +1,10 @@
 <div class="list" data-test="list">
-  <ng-container *ngIf="items$ | async as items">
-    <h2 data-test="list__h2">All</h2>
-    <ul>
-      <li *ngFor="let item of items">
-        <app-item [item]="item"></app-item>
-      </li>
-    </ul>
-  </ng-container>
+  <h2 data-test="list__h2">All</h2>
+  <ul>
+    <li *ngFor="let item of items$">
+      <app-item [item]="item"></app-item>
+    </li>
+  </ul>
 </div>
 
 <!--  -->
