@@ -11,6 +11,9 @@ import { Data } from '@angular/router';
 export class ListComponent {
   items: IItem[];
   constructor(private dataService: DataService) {
-    this.items = this.dataService.items;
+    this.items = this.dataService.getItems();
+  }
+  getItems() {
+    this.items = this.dataService.getItems();
   }
 }

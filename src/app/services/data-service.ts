@@ -8,11 +8,14 @@ export class DataService {
   items: IItem[] = [];
 
   constructor() {}
-
+  getItems(): IItem[] {
+    return this.items;
+  }
   addItem(item: IItem): void {
     this.items.push(item);
   }
   removeItem(id: string): void {
+    debugger;
     this.items = this.items.filter((item) => item.id !== id);
   }
   getItem(id: string): IItem {
