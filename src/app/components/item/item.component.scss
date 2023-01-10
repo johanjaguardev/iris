@@ -8,13 +8,33 @@
         font-weight: 700;
       }
 
+      input#mat-input-1 {
+        background: transparent;
+        box-sizing: border-box;
+        border: none;
+        border-radius: $box-border-radius;
+        margin: 0;
+        outline: $green__cyprus 2px solid;
+        padding: rem(16px);
+        width: 100%;
+      }
       &__icon {
         color: red;
         cursor: pointer;
         position: absolute;
-        right: rem(-30px);
+        right: rem(-60px);
         top: 50%;
         transform: translateY(-50%);
+
+        &-edit,
+        &-check {
+          right: rem(-30px);
+        }
+
+        &-check,
+        &-clear {
+          color: $green__cyprus;
+        }
       }
       .mat-mdc-checkbox.mat-accent
         .mdc-checkbox--selected

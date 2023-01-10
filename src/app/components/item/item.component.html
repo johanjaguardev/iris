@@ -1,15 +1,46 @@
 <section class="item" data-test="item">
-  <mat-checkbox
-    class="item__checkbox"
-    data-test="item__checkbox"
-    [(ngModel)]="item.checked"
-  >
-    {{ item.description }}
-  </mat-checkbox>
-  <mat-icon
-    class="item__icon"
-    data-test="item__icon"
-    fontIcon="close"
-    (click)="onRemoveItem(item.id)"
-  ></mat-icon>
+  <div class="item__row-1 item__row" [hidden]="!isTextHidden">
+    <mat-checkbox
+      class="item__checkbox"
+      data-test="item__checkbox"
+      [(ngModel)]="item.checked"
+    >
+      {{ item.description }}
+    </mat-checkbox>
+    <mat-icon
+      class="item__icon item__icon-edit"
+      data-test="item__icon-edit"
+      fontIcon="edit"
+      (click)="onEditItem(item.id)"
+    ></mat-icon>
+    <mat-icon
+      class="item__icon"
+      data-test="item__icon"
+      fontIcon="close"
+      (click)="onRemoveItem(item.id)"
+    ></mat-icon>
+  </div>
+  <div class="item__row-2 item__row" [hidden]="isTextHidden">
+    <input
+      class="item__text"
+      matInput
+      type="text"
+      [(ngModel)]="value"
+      [disabled]="isTextHidden"
+      #item__text
+      (keyup.enter)="onCheckItem(item.id)"
+    />
+    <mat-icon
+      class="item__icon-check item__icon"
+      data-test="item__icon-check"
+      fontIcon="check"
+      (click)="onCheckItem(item.id)"
+    ></mat-icon>
+    <mat-icon
+      class="item__icon item__icon-clear"
+      data-test="item__icon-clear"
+      fontIcon="clear"
+      (click)="onClearItem()"
+    ></mat-icon>
+  </div>
 </section>

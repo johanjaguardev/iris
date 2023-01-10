@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { IItem } from 'src/app/types/IItem';
 import { DataService } from 'src/app/services/data-service';
 
@@ -9,6 +9,8 @@ import { DataService } from 'src/app/services/data-service';
 })
 export class ItemComponent {
   @Input() item: IItem;
+  isTextHidden: boolean = true;
+  value: string = '';
   constructor(private dataService: DataService) {
     this.item = {
       checked: false,
@@ -17,7 +19,25 @@ export class ItemComponent {
     };
   }
 
+  ngOnInit() {
+    this.value = this.item.description;
+  }
+
   onRemoveItem(id: string): void {
     this.dataService.removeItem(id);
+  }
+  onEditItem(id: string): void {
+    this.isTextHidden = false;
+  }
+  onCheckItem(id: string): void {
+    this.isTextHidden = true;
+    this.dataService.updateItem({
+      description: this.value,
+      checked: this.item.checked,
+      id: this.item.id,
+    });
+  }
+  onClearItem(): void {
+    this.isTextHidden = true;
   }
 }

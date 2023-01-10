@@ -95,18 +95,19 @@ My Project is currently in local storage stage (v0.7.0) . Here is a list of the 
 - Filter the item list
 - Checked action
 - CSS for desktop
+- Edit item feature
 
 ## Future Steps
 
-We are currently in the first stable version, and we will evaluate the implementation of potential features next.
+We latest feature included was the edit item feature
 
 ## Potential Features
 
 In addition to the features that we are currently working on, we also have a list of ideas for features that we may implement in the future. These features are not yet planned, but we are considering them for a future release:
 
-- edit item descripction
 - save status with local storage
-- add notes
+- add notes to item
+- edit and remove item in bulk
 
 We welcome feedback and suggestions for new features! If you have an idea for a feature that you would like to see in My Project, please let us know by opening an issue or sending us an email.
 
@@ -158,3 +159,7 @@ We welcome feedback and suggestions for new features! If you have an idea for a 
 ### v1.0.0 (2023-01-10)
 
 - Stable version responsive of todo without saving state
+
+### v1.1.0 (2023-01-10)
+
+- Edit item feature
