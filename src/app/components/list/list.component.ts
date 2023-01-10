@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Item } from './../../types/Item';
+import { IItem } from '../../types/IItem';
+import { DataService } from 'src/app/services/data-service';
+import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -7,16 +9,8 @@ import { Item } from './../../types/Item';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  items: Item[] = [
-    { status: true, description: 'Item 2' },
-    { status: false, description: 'Item 3' },
-    { status: true, description: 'Item 6' },
-    { status: false, description: 'Item 10' },
-    { status: true, description: 'Item 1' },
-    { status: false, description: 'Item 7' },
-    { status: true, description: 'Item 5' },
-    { status: false, description: 'Item 8' },
-    { status: true, description: 'Item 9' },
-    { status: false, description: 'Item 4' },
-  ];
+  items: IItem[];
+  constructor(private dataService: DataService) {
+    this.items = this.dataService.items;
+  }
 }

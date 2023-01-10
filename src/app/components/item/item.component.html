@@ -1,6 +1,10 @@
 <section class="item" data-test="item">
-  <mat-checkbox class="item__checkbox" data-test="item__checkbox">
-    Description
+  <mat-checkbox
+    class="item__checkbox"
+    data-test="item__checkbox"
+    [(ngModel)]="item.checked"
+  >
+    {{ item.description }}
   </mat-checkbox>
   <mat-icon
     class="item__icon"
