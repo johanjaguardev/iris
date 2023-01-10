@@ -94,18 +94,18 @@ My Project is currently in local storage stage (v0.7.0) . Here is a list of the 
 - Delete action in item component
 - Filter the item list
 - Checked action
+- CSS for desktop
 
 ## Future Steps
 
-There are several features and improvements that we plan to add to My Project in the future. Here is a list of some of the things that we are working on:
-
-- css for desktop
+We are currently in the first stable version, and we will evaluate the implementation of potential features next.
 
 ## Potential Features
 
 In addition to the features that we are currently working on, we also have a list of ideas for features that we may implement in the future. These features are not yet planned, but we are considering them for a future release:
 
 - edit item descripction
+- save status with local storage
 - add notes
 
 We welcome feedback and suggestions for new features! If you have an idea for a feature that you would like to see in My Project, please let us know by opening an issue or sending us an email.
@@ -146,3 +146,15 @@ We welcome feedback and suggestions for new features! If you have an idea for a 
 - Change the data-service to implement observables
 - Implement filter action
 - Change checkbox listener and update it in the service
+
+### v0.7.0 (2023-01-10)
+
+- Responsive CSS changes:
+  - Added media queries for different screen sizes
+- Bug fixes:
+  - Fixed checkbox color
+  - Fixed H2 with status in list items
+
+### v1.0.0 (2023-01-10)
+
+- Stable version responsive of todo without saving state
