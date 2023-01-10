@@ -66,4 +66,65 @@ describe('DataService', () => {
     service.updateItem(modifiedItem);
     expect(service.getItem(item1.id)).toEqual(modifiedItem);
   });
+
+  it('should return the correct item', () => {
+    const item = { id: '1', description: 'Test Item', checked: true };
+    service.itemsSubject.next([item]);
+    const result = service.getItem('1');
+    expect(result).toEqual(item);
+  });
+
+  it('should return default value if item not found', () => {
+    const item = { id: '1', description: 'Test Item', checked: true };
+    service.itemsSubject.next([item]);
+    const result = service.getItem('2');
+    expect(result).toEqual({ id: '', description: '', checked: false });
+  });
+
+  it('should update the item correctly', () => {
+    const item = { id: '1', description: 'Test Item', checked: true };
+    const modifiedItem = {
+      id: '1',
+      description: 'Modified Item',
+      checked: false,
+    };
+    service.itemsSubject.next([item]);
+    service.updateItem(modifiedItem);
+    expect(service.itemsSubject.value).toEqual([modifiedItem]);
+  });
+
+  it('should call filter.next with correct filter value', () => {
+    const filterValue = 'Checked';
+    spyOn(service.filter, 'next');
+    service.updateFilter(filterValue);
+    expect(service.filter.next).toHaveBeenCalledWith(filterValue);
+  });
+
+  it('should return filtered items as an observable', () => {
+    const items = [
+      { id: '1', description: 'Test Item 1', checked: true },
+      { id: '2', description: 'Test Item 2', checked: false },
+      { id: '3', description: 'Test Item 3', checked: true },
+    ];
+    service.itemsSubject.next(items);
+    service.updateFilter('Checked');
+    const filteredItems$ = service.getFilteredItems$();
+    filteredItems$.subscribe((result) => {
+      expect(result).toEqual([items[0], items[2]]);
+    });
+  });
+
+  it('should return unchecked items when filter is set to Unchecked', () => {
+    const items = [
+      { id: '1', description: 'Test Item 1', checked: true },
+      { id: '2', description: 'Test Item 2', checked: false },
+      { id: '3', description: 'Test Item 3', checked: true },
+    ];
+    service.itemsSubject.next(items);
+    service.updateFilter('Unchecked');
+    const filteredItems$ = service.getFilteredItems$();
+    filteredItems$.subscribe((result) => {
+      expect(result).toEqual([items[1]]);
+    });
+  });
 });

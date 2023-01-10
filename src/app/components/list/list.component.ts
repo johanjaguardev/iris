@@ -10,11 +10,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  items$: Observable<IItem[]>;
+  items$: IItem[] = [];
   // Keep the DataService private
-  private dataService: DataService;
-  constructor(dataService: DataService) {
+  constructor(private dataService: DataService) {
     this.dataService = dataService;
-    this.items$ = this.dataService.items$;
+  }
+  ngOnInit() {
+    this.dataService.getFilteredItems$().subscribe((items) => {
+      this.items$ = items;
+    });
   }
 }

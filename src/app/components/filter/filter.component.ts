@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data-service';
+import { IFilter } from 'src/app/types/IFilter';
 
 @Component({
   selector: 'app-filter',
@@ -7,9 +9,11 @@ import { Component } from '@angular/core';
 })
 export class FilterComponent {
   states = ['All', 'Checked', 'Unchecked'];
-  selectedState: string = 'All';
-
+  selectedState: IFilter;
+  constructor(private dataService: DataService) {
+    this.selectedState = 'All';
+  }
   onStateChange() {
-    console.log(`State has changed: ${this.selectedState}`);
+    this.dataService.updateFilter(this.selectedState);
   }
 }
