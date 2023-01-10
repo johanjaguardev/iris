@@ -18,6 +18,5 @@ export class ItemComponent {
 
   onRemoveItem(id: string): void {
     this.dataService.removeItem(id);
-    this.dataService.getItems();
   }
 }

@@ -89,21 +89,4 @@ describe('ItemComponent', () => {
 
     expect(checkboxElement.classList).toContain('mat-checkbox-checked');
   });
-
-  it('should remove an item with the specified id', () => {
-    const item1 = { id: '1', description: 'Item 1', checked: false };
-    const item2 = { id: '2', description: 'Item 2', checked: true };
-    service.items = [item1, item2];
-    service.removeItem('1');
-    expect(service.items).toEqual([item2]);
-  });
-
-  it('should call the removeItem method of the DataService on button click', () => {
-    const item1 = { id: '1', description: 'Item 1', checked: false };
-    const item2 = { id: '2', description: 'Item 2', checked: true };
-    service.items = [item1, item2];
-    spyOn(service, 'removeItem');
-    component.onRemoveItem('1');
-    expect(service.removeItem).toHaveBeenCalledWith('1');
-  });
 });

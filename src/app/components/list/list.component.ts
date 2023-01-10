@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IItem } from '../../types/IItem';
 import { DataService } from 'src/app/services/data-service';
 import { Data } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -9,11 +10,11 @@ import { Data } from '@angular/router';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  items: IItem[];
-  constructor(private dataService: DataService) {
-    this.items = this.dataService.getItems();
-  }
-  getItems() {
-    this.items = this.dataService.getItems();
+  items$: Observable<IItem[]>;
+  // Keep the DataService private
+  private dataService: DataService;
+  constructor(dataService: DataService) {
+    this.dataService = dataService;
+    this.items$ = this.dataService.items$;
   }
 }

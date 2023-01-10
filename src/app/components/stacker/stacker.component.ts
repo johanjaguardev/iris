@@ -9,10 +9,7 @@ import { IItem } from 'src/app/types/IItem';
 })
 export class StackerComponent {
   value = 'Text the new item';
-  items: IItem[];
-  constructor(private dataService: DataService) {
-    this.items = this.dataService.items;
-  }
+  constructor(private dataService: DataService) {}
 
   onClickAdd = () => {
     this.addItem(this.value);
