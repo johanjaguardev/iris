@@ -25,6 +25,7 @@ export class DataService {
     return item || { id: '', description: '', checked: false };
   }
   updateItem(modifyedItem: IItem): void {
+    debugger;
     this.itemsSubject.next(
       this.itemsSubject.value.map((item) => {
         if (item.id === modifyedItem.id) {

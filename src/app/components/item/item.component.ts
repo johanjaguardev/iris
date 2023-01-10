@@ -29,5 +29,15 @@ export class ItemComponent {
   onEditItem(id: string): void {
     this.isTextHidden = false;
   }
-  onCheckItem(id: string): void {}
+  onCheckItem(id: string): void {
+    this.isTextHidden = true;
+    this.dataService.updateItem({
+      description: this.value,
+      checked: this.item.checked,
+      id: this.item.id,
+    });
+  }
+  onClearItem(): void {
+    this.isTextHidden = true;
+  }
 }

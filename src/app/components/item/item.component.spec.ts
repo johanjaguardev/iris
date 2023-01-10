@@ -75,10 +75,6 @@ describe('ItemComponent', () => {
     expect(checkboxElement.getAttribute('ng-reflect-model')).toBe('true');
   });
 
-  it('should set the fontIcon attribute of the mat-icon element to "close"', () => {
-    expect(iconElement.getAttribute('ng-reflect-font-icon')).toBe('close');
-  });
-
   it('should remove an item from the list', () => {
     // Add some initial items to the list
     service.addItem({ id: '1', description: 'Item 1', checked: false });
@@ -96,5 +92,40 @@ describe('ItemComponent', () => {
     expect(
       service.itemsSubject.value.find((item) => item.id === '2')
     ).toBeUndefined();
+  });
+
+  describe('onRemoveItem', () => {
+    it('should call removeItem on dataService', () => {
+      const id = '123';
+      spyOn(service, 'removeItem');
+      component.onRemoveItem(id);
+      expect(service.removeItem).toHaveBeenCalledWith(id);
+    });
+  });
+  describe('onEditItem', () => {
+    it('should set isTextHidden to false', () => {
+      const id = '123';
+      component.onEditItem(id);
+      expect(component.isTextHidden).toBeFalsy();
+    });
+  });
+  describe('onCheckItem', () => {
+    it('should call updateItem on dataService', () => {
+      const id = '123';
+      spyOn(service, 'updateItem');
+      component.onCheckItem(id);
+      expect(service.updateItem).toHaveBeenCalled();
+    });
+    it('should set isTextHidden to true', () => {
+      const id = '123';
+      component.onCheckItem(id);
+      expect(component.isTextHidden).toBeTruthy();
+    });
+  });
+  describe('onClearItem', () => {
+    it('should set isTextHidden to true', () => {
+      component.onClearItem();
+      expect(component.isTextHidden).toBeTruthy();
+    });
   });
 });

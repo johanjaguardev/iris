@@ -28,18 +28,19 @@
       [(ngModel)]="value"
       [disabled]="isTextHidden"
       #item__text
+      (keyup.enter)="onCheckItem(item.id)"
     />
     <mat-icon
       class="item__icon-check item__icon"
       data-test="item__icon-check"
       fontIcon="check"
-      (click)="onRemoveItem(item.id)"
+      (click)="onCheckItem(item.id)"
     ></mat-icon>
     <mat-icon
       class="item__icon item__icon-clear"
       data-test="item__icon-clear"
       fontIcon="clear"
-      (click)="onRemoveItem(item.id)"
+      (click)="onClearItem()"
     ></mat-icon>
   </div>
 </section>
